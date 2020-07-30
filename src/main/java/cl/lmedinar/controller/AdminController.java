@@ -8,17 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	
-	//administrador
+
 	@GetMapping
 	public String index(ModelMap mapa) {
-		
-		
 		return "/admin/index";
 	}
-	
-	
-
-	
 
 }
