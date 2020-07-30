@@ -8,14 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
-	
-	@GetMapping
-	public String index(ModelMap mapa) {
-		
-		return "/usuario/indexUsuario";
-	}
-	
-	
 
-	
+    @GetMapping
+    public String index(ModelMap mapa) {
+
+        // cambiar este nombre a /usuario/index
+        return "/usuario/indexUsuario";
+    }
+
 }
