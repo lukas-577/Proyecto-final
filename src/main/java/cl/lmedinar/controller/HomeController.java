@@ -21,12 +21,6 @@ public class HomeController {
         return "acerca-de";
     }
 
-    // eliminar esto
-    @GetMapping("/precios")
-    public String precios(ModelMap mapa) {
-        return "precios";
-    }
-
     @GetMapping("/album")
     public String portfolio(ModelMap mapa) {
         return "album";

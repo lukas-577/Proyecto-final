@@ -45,10 +45,8 @@
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
                             <li><a href="acerca-de">Acerca De</a></li>
-                            <li><a href="precios">Precios</a></li>
                             <li><a href="album">Album</a></li>
                             <li><a href="login">Login</a></li>
-                            <li><a href="detalle-album">Detalle Album</a> </li>
                             <li><a href="/contacto">Contacto</a></li>
                         </ul>
                     </nav>

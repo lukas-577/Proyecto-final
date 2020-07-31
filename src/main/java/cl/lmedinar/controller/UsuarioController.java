@@ -12,8 +12,7 @@ public class UsuarioController {
     @GetMapping
     public String index(ModelMap mapa) {
 
-        // cambiar este nombre a /usuario/index
-        return "/usuario/indexUsuario";
+        return "/usuario/index";
     }
 
 }
