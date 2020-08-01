@@ -26,17 +26,27 @@ public class HomeController {
         return "album";
     }
 
-    // se va a referenciar cuando se pinche una
-    // imagen
-    @GetMapping("/detalle-album/{id}")
-    public String portfolioDetails(
-        ModelMap mapa, 
-        @RequestParam(name = "id", required = false) Integer id) {
+//    // se va a referenciar cuando se pinche una
+//    // imagen
+//    @GetMapping("/detalle-album/{id}")
+//    public String portfolioDetails(
+//        ModelMap mapa, 
+//        @RequestParam(name = "id", required = false) Integer id) {
+//
+//        // se carga la información detallada de la imagen
+//        
+//        return "detalle-album";
+//    }
+    
+  // se va a referenciar cuando se pinche una
+  // imagen
+  @GetMapping("/detalle-album")
+  public String portfolioDetails(ModelMap mapa) {
 
-        // se carga la información detallada de la imagen
-        
-        return "detalle-album";
-    }
+      // se carga la información detallada de la imagen
+      
+      return "detalle-album";
+  }
 
     @GetMapping("/contacto")
     public String contact(ModelMap mapa) {

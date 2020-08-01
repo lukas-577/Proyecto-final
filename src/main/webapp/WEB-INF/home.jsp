@@ -37,16 +37,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="/">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
                     <nav class="nav-menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="acerca-de">Acerca De</a></li>
-                            <li><a href="album">Album</a></li>
-                            <li><a href="login">Login</a></li>
+                            <li><a href="/acerca-de">Acerca De</a></li>
+                            <li><a href="/album">Album</a></li>
+                            <li><a href="/login">Login</a></li>
                             <li><a href="/contacto">Contacto</a></li>
                         </ul>
                     </nav>
@@ -122,6 +122,7 @@
                 </div>
                 <div class="cs-item">
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-2.jpg"></div>
+                     <a href="/album" ><span class="icon_plus"></span></a>
                     <div class="cs-text">
                         <h4>Natural</h4>
                         <span>325 pictures</span>
