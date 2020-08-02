@@ -79,7 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         .failureUrl("/login?error=true")
         // indicar campos name en los imput
         // de usuario y contraseña
-        .usernameParameter("correo").passwordParameter("contrasenia")
+        .usernameParameter("email").passwordParameter("contrasenia")
         // indicamos la url de éxito
 //        .defaultSuccessUrl("/")
         // manejamos el recurso no permitido

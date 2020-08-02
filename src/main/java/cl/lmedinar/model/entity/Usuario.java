@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import cl.lmedinar.config.EncoderUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,11 @@ public class Usuario {
 	private String nombre;
 	private Integer rut;
 	private Rol rol;
+	
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = EncoderUtils.passwordEncoder().encode(contrasenia);
+    }
+	
 //	@OneToMany(mappedBy="codigo")
 //	
 //	private List<Imagen> imagenes;

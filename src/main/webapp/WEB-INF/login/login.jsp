@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +13,21 @@
 		<div class="row">
 			<div class="col-sm"></div>
 			<div class="col-sm">
-				<form>
+				<form action="<c:url value='/login' />" method="post">
+
+					<!--|== Inicio - Mensaje error ======================|-->
+					<c:if test="${error}">
+						<div class="alert alert-warning alert-dismissible fade show"
+							role="alert">
+							<strong>¡Error!</strong> credenciales inválidas
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</c:if>
+
+					<!--|== Fin - Mensaje error =========================|-->
 					<div class="form-group">
 						<label for="exampleInputEmail1">ingrese email</label> <input
 							type="email" class="form-control" id="exampleInputEmail1"
@@ -30,11 +45,19 @@
 							me out</label>
 					</div>
 					<a href="/admin" class="btn btn-primary btn-user btn-block">
-						Login Admin </a>
-					<a href="/usuario" class="btn btn-primary btn-user btn-block">
-						Login Usuario </a>
-					
+						Login Admin </a> <a href="/usuario"
+						class="btn btn-primary btn-user btn-block"> Login Usuario </a>
+					<div
+						class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+						<button class="btn btn-primary" type="submit">Ingresar</button>
+					</div>
+
 				</form>
+				<!--|== Inicio - Enlace al registro ===============|-->
+				<div class="card-footer text-center">
+					<div class="small"></div>
+				</div>
+				<!--|== Fin - Enlace al registro ==================|-->
 			</div>
 			<div class="col-sm"></div>
 		</div>
@@ -44,8 +67,8 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 		crossorigin="anonymous">
-		
-		<!-- bootstrap -->
+
+	<!-- bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"></script>
