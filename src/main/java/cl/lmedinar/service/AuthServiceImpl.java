@@ -40,10 +40,11 @@ public class AuthServiceImpl  implements UserDetailsService {
             List<SimpleGrantedAuthority> roles = Arrays.asList(new SimpleGrantedAuthority(rol));
             // acá se hace el login !!!
             usuarioSistema = new User(username_, password_, roles);
+            // so acá hay resultado, entonces hay login. (tener en cuenta para errores)
         }else {
             logger.warn("el usuario no pudo ser encontrado, username :" + username);
         }
-        
+
         return usuarioSistema;
     }
 

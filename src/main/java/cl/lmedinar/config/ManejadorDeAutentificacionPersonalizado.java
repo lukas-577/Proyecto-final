@@ -27,8 +27,9 @@ public class ManejadorDeAutentificacionPersonalizado implements AuthenticationSu
         if(roles.contains("ROLE_ADMIN")) {
             response.sendRedirect("/admin");
         }else {
-            response.sendRedirect("/home");
+            response.sendRedirect("/usuario");
         }
+
     }
 
 }
