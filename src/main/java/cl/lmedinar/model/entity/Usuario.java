@@ -9,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import cl.lmedinar.model.entity.Usuario;
 import cl.lmedinar.config.EncoderUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +37,25 @@ public class Usuario {
 	
     public void setContrasenia(String contrasenia) {
         this.contrasenia = EncoderUtils.passwordEncoder().encode(contrasenia);
+    }
+    
+    /**
+     * Método diseñado para poder convertir esta entidad
+     * en una cadena de texto, con formáto json.
+     * Esto es útil para los js, que tengamos
+     * en la vista 
+     */
+    public String toJson() {
+        Usuario aux = new Usuario(id, nombre, email, contrasenia, urlImagen, id, rol);
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = null;
+        try {
+            jsonString = mapper.writeValueAsString(aux);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        
+        return jsonString;
     }
 	
 //	@OneToMany(mappedBy="codigo")

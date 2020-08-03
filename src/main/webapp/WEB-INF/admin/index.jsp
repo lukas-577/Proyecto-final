@@ -42,7 +42,7 @@
 
 
 					<h2>Mantenedor de Usuarios</h2>
-					<form id="formulario" action="<c:url value='/usuarios'/>" method="post"
+					<form id="formulario" action="<c:url value='/usuario'/>" method="post"
 						enctype="multipart/form-data">
 						
 						<div class="form-group">
