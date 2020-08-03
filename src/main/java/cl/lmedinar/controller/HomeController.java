@@ -55,9 +55,14 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String login(ModelMap mapa) {
+    public String login(ModelMap modelo,
+        @RequestParam(name = "error", required = false) String error) {
+        if (error != null)
+            modelo.put("error", true);
 
-        return "/login/login";
+        return "login/login";
+
     }
 
 }
+
