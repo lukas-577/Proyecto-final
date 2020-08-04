@@ -1,5 +1,9 @@
 package cl.lmedinar.controller;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,13 +15,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import cl.lmedinar.model.entity.Usuario;
 import cl.lmedinar.service.UsuarioService;
 
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
-
+	
+	private static Logger logger = LoggerFactory.getLogger(UsuarioController.class);
+	
     @GetMapping
     public String index(ModelMap mapa) {
 
@@ -35,6 +42,12 @@ public class UsuarioController {
         System.out.println("mensaje:" + mensaje);
         if(mensaje != null)
             mapa.put("mensaje", mensaje);
+        
+        logger.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        List<Usuario> usuarios = servicio.obtenerTodos();
+        for(Usuario usuario:usuarios) {
+        	logger.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"+usuario.getContrasenia());
+        }
         mapa.put("usuarios", servicio.obtenerTodos());
 
         return "admin/index";
@@ -69,7 +82,7 @@ public class UsuarioController {
             + Usuariorespuesta.getEmail()
             + ", ingresado."
         );
-
+        logger.info("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         return "redirect:/admin";
     }
 

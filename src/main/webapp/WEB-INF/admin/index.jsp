@@ -95,7 +95,7 @@
 							</tr>
 						</tfoot>
 						<tbody>
-							<c:forEach var="usuario" items="${usuarios}">
+							<c:forEach var="usuario" items="${usuario}">
 								<tr>
 									<th scope="row">${usuario.id}</th>
 									<td>${usuario.nombre}</td>
