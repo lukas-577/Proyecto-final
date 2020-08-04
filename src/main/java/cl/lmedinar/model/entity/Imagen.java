@@ -1,6 +1,7 @@
 package cl.lmedinar.model.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,8 +31,14 @@ public class Imagen {
     private String iso;
     private String exposicion;
     private String urlImagen;
-//	@ManyToOne
-//	@JoinColumn(name="codigo",nullable=true)
-//	public Usuario usuario;
+    
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="usuario_id")
+	public Usuario usuario;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="categoria_id")
+	public Categoria categoria;
+	
 
 }

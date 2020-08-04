@@ -3,6 +3,7 @@ package cl.lmedinar.model.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -46,7 +47,7 @@ public class Usuario {
      * en la vista 
      */
     public String toJson() {
-        Usuario aux = new Usuario(id, nombre, email, contrasenia, urlImagen, id, rol);
+        Usuario aux = new Usuario(id, nombre, email, contrasenia, urlImagen, id, rol, imagenes);
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = null;
         try {
@@ -58,7 +59,7 @@ public class Usuario {
         return jsonString;
     }
 	
-//	@OneToMany(mappedBy="codigo")
-//	
-//	private List<Imagen> imagenes;
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario",orphanRemoval = true)
+	
+	private List<Imagen> imagenes;
 }

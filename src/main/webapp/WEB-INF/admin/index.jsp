@@ -42,12 +42,12 @@
 
 
 					<h2>Mantenedor de Usuarios</h2>
-					<form id="formulario" action="<c:url value='/usuario'/>" method="post"
-						enctype="multipart/form-data">
-						
+					<form id="formulario" action="<c:url value='/admin'/>"
+						method="post" enctype="multipart/form-data">
+
 						<div class="form-group">
-							<label for="marca">Nombre</label> <input id="nombre" name="nombre"
-								type="text" class="form-control" />
+							<label for="marca">Nombre</label> <input id="nombre"
+								name="nombre" type="text" class="form-control" />
 						</div>
 
 						<div class="form-group">
@@ -56,8 +56,9 @@
 						</div>
 
 						<div class="form-group">
-							<label for="anio">Contraseña</label> <input id="contrasenia" name="contrasenia"
-								type="password" class="form-control" required="required" />
+							<label for="anio">Contraseña</label> <input id="contrasenia"
+								name="contrasenia" type="password" class="form-control"
+								required="required" />
 						</div>
 
 						<div class="form-group">
@@ -72,46 +73,47 @@
 				<!-- Formulario # -->
 
 				<!-- TABLA DE AUTOMOVIL -->
-					<h2>Lista de usuarios</h2>
-					<table id="tablaAutos" class="table">
-						<thead>
+				<h2>Lista de usuarios</h2>
+				<table id="tablaAutos" class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">nombre</th>
+							<th scope="col">correo</th>
+							<th scope="col">contrasenia</th>
+							<th scope="col">Imagen</th>
+							<th scope="col">Acción</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">nombre</th>
+							<th scope="col">correo</th>
+							<th scope="col">contrasenia</th>
+							<th scope="col">Imagen</th>
+							<th scope="col">Acción</th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<c:forEach var="usuario" items="${usuarios}">
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">nombre</th>
-								<th scope="col">correo</th>
-								<th scope="col">contrasenia</th>
-								<th scope="col">Imagen</th>
-								<th scope="col">Acción</th>
+								<th scope="row">${usuario.id}</th>
+								<td>${usuario.nombre}</td>
+								<td>${usuario.email}</td>
+								<td>${usuario.contrasenia}</td>
+								<td><img width="100" height="100"
+									src="<c:url value='${usuario.urlImagen}'></c:url>"
+									class="rounded" alt="${usuario.urlImagen}" /></td>
+								<td><a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a>
+									| <a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>
+
+								</td>
 							</tr>
-						</thead>
-						<tfoot>
-							<tr>
-								<th scope="col">#</th>
-								<th scope="col">nombre</th>
-								<th scope="col">correo</th>
-								<th scope="col">contrasenia</th>
-								<th scope="col">Imagen</th>
-								<th scope="col">Acción</th>
-							</tr>
-						</tfoot>
-						<tbody>
-							<c:forEach var="usuario" items="${usuario}">
-								<tr>
-									<th scope="row">${usuario.id}</th>
-									<td>${usuario.nombre}</td>
-									<td>${usuario.correo}</td>
-									<td>${usuario.contrasenia}</td>
-									<td><img width="100" height="100" src="<c:url value='${usuario.urlImagen}'></c:url>" class="rounded" alt="${usuario.urlImagen}" /></td>
-									<td>
-									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a> | 
-									<a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>
-									
-									</td>
-								</tr>
-							</c:forEach>
-							
-						</tbody>
-					</table>
+						</c:forEach>
+
+					</tbody>
+				</table>
 				<!-- TABLA DE AUTOMOVIL # -->
 			</div>
 			<div class="col-2"></div>
@@ -141,21 +143,21 @@
 		});
 	</script>
 	<!-- javascript - # data table -->
-	
+
 	<script type="text/javascript">
 		const eliminar = (usuario) => {
-			if(!confirm("seguro que desea eliminar usuario id: " + usuario.correo))
+			if(!confirm("seguro que desea eliminar usuario id: " + usuario.email))
 				return
 
 			const baseUrl = window.location.origin
-			window.location.href = baseUrl + '/usuarios/eliminar?id=' + usuario.id
+			window.location.href = baseUrl + '/admin/eliminar?id=' + usuario.id
 		}
 		
 		const actualizar = (usuario) => {
 			// capturamos el formulario
 			const formulario = document.querySelector('#formulario')
 			formulario.nombre.value = usuario.nombre
-			formulario.correo.value = usuario.correo
+			formulario.correo.value = usuario.email
 
 			// eliminamos los imputs si existen, si existe
 			// será capturado por su id
@@ -189,7 +191,7 @@
 			// lo capturamos por su id
 			formulario.boton.textContent = 'Actualizar'
 			// cambiamos el método para que vaya a actualizar
-			formulario.action = '/usuarios/actualizar'
+			formulario.action = '/admin/actualizar'
 		}
 
 	</script>
