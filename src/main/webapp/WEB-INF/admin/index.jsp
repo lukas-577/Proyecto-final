@@ -51,8 +51,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="modelo">Correo</label> <input id="correo"
-								name="correo" type="email" class="form-control" />
+							<label for="modelo">Correo</label> <input id="email"
+								name="email" type="email" class="form-control" />
 						</div>
 
 						<div class="form-group">

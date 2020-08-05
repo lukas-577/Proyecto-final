@@ -56,7 +56,6 @@ public class UsuarioService {
         logger.info("Ingresando al usuario: " + usuario.toString());
         String nombreArchivo = archivos.subirArchivo(archivo);
         usuario.setUrlImagen(nombreArchivo);
-        usuario.setId(null);
         return dao.save(usuario);
     }
     

@@ -81,6 +81,7 @@ public class AdminController {
         RedirectAttributes atributos,
         @ModelAttribute Usuario usuario, 
         @RequestParam("imagen") MultipartFile archivo) {
+    	logger.info("XXXXXXXX"+usuario);
         Usuario Usuariorespuesta = servicio.ingresar(usuario, archivo); 
         
         atributos.addFlashAttribute(

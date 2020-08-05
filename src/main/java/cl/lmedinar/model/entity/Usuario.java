@@ -29,10 +29,11 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	private String nombre;
 	private String email;
 	private String contrasenia;
 	private String urlImagen;
-	private String nombre;
+
 	private Integer rut;
 	private Rol rol;
 	
