@@ -42,7 +42,7 @@
 
 
 					<h2>Sube tu Imagen</h2>
-					<form id="formulario" action="<c:url value='/usuarios'/>" method="post"
+					<form id="formulario" action="<c:url value='/usuario'/>" method="post"
 						enctype="multipart/form-data">
 						
 						<div class="form-group">
@@ -51,8 +51,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="modelo">Correo</label> <input id="correo"
-								name="correo" type="email" class="form-control" />
+							<label for="modelo">Correo</label> <input id="email"
+								name="email" type="email" class="form-control" />
 						</div>
 
 						<div class="form-group">

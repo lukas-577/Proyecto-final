@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="cl.lmedinar.model.entity.Rol"%>
 
 <!DOCTYPE html>
 <html>
@@ -51,8 +52,8 @@
 						</div>
 
 						<div class="form-group">
-							<label for="modelo">Correo</label> <input id="email"
-								name="email" type="email" class="form-control" />
+							<label for="modelo">Correo</label> <input id="email" name="email"
+								type="email" class="form-control" />
 						</div>
 
 						<div class="form-group">
@@ -65,7 +66,15 @@
 							<label for="precio">Imágen</label> <input id="imagen"
 								name="imagen" type="file" class="form-control" />
 						</div>
-
+						<div class="form-group">
+							<label for="rol">Rol</label> <select class="form-control"
+								id="rol" name="rol">
+								<c:forEach var="rol" items="${Rol.values()}">
+									<option value="${rol}">${rol}</option>
+								</c:forEach>
+							</select>
+						</div>
+						
 						<button id="boton" type="submit" class="btn btn-primary">Guardar</button>
 					</form>
 				</div>
@@ -83,6 +92,7 @@
 							<th scope="col">contrasenia</th>
 							<th scope="col">Imagen</th>
 							<th scope="col">Acción</th>
+							<th scope="col">Rol</th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -93,6 +103,7 @@
 							<th scope="col">contrasenia</th>
 							<th scope="col">Imagen</th>
 							<th scope="col">Acción</th>
+							<th scope="col">Rol</th>
 						</tr>
 					</tfoot>
 					<tbody>
@@ -105,9 +116,9 @@
 								<td><img width="100" height="100"
 									src="<c:url value='${usuario.urlImagen}'></c:url>"
 									class="rounded" alt="${usuario.urlImagen}" /></td>
-								<td>
-									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a>
+								<td><a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a>
 									| <a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>
+								<td>${usuario.rol}</td>
 
 								</td>
 							</tr>

@@ -63,4 +63,5 @@ public class Usuario {
 //	@OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario",orphanRemoval = true)
 //	
 //	private List<Imagen> imagenes;
+//  esto me esta tirando error al querer actualizar la informacion en la tabla de la vista admin
 }
