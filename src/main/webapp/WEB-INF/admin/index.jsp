@@ -105,7 +105,8 @@
 								<td><img width="100" height="100"
 									src="<c:url value='${usuario.urlImagen}'></c:url>"
 									class="rounded" alt="${usuario.urlImagen}" /></td>
-								<td><a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a>
+								<td>
+									<a href='javascript:actualizar(${usuario.toJson()})'>Actualizar</a>
 									| <a href='javascript:eliminar(${usuario.toJson()})'>Eliminar</a>
 
 								</td>
@@ -157,7 +158,7 @@
 			// capturamos el formulario
 			const formulario = document.querySelector('#formulario')
 			formulario.nombre.value = usuario.nombre
-			formulario.correo.value = usuario.email
+			formulario.email.value = usuario.email
 
 			// eliminamos los imputs si existen, si existe
 			// será capturado por su id

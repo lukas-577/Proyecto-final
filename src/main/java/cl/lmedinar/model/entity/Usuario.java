@@ -48,7 +48,7 @@ public class Usuario {
      * en la vista 
      */
     public String toJson() {
-        Usuario aux = new Usuario(id, nombre, email, contrasenia, urlImagen, id, rol, imagenes);
+        Usuario aux = new Usuario(id, nombre, email, contrasenia, urlImagen, id, rol);
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = null;
         try {
@@ -60,7 +60,7 @@ public class Usuario {
         return jsonString;
     }
 	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario",orphanRemoval = true)
-	
-	private List<Imagen> imagenes;
+//	@OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario",orphanRemoval = true)
+//	
+//	private List<Imagen> imagenes;
 }

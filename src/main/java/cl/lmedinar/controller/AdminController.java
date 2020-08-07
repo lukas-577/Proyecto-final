@@ -47,7 +47,6 @@ public class AdminController {
         @ModelAttribute("mensaje") String mensaje, 
         ModelMap mapa
     ) {
-        System.out.println("mensaje:" + mensaje);
         if(mensaje != null)
             mapa.put("mensaje", mensaje);
      
@@ -68,7 +67,7 @@ public class AdminController {
         else
             servicio.actualizar(usuario, archivo);
         
-        atributos.addFlashAttribute("mensaje", "Usuario actualizado");
+        atributos.addFlashAttribute("mensaje", "Usuario: "+usuario.getEmail()+ "actualizado");
         List<Usuario> usuarios = servicio.obtenerTodos();
         mapa.put("usuarios", usuarios);
         
