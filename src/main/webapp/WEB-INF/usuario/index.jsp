@@ -22,6 +22,25 @@
 </head>
 <body>
 
+	<!-- Header Section Begin -->
+	<header class="header-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo">
+						<a href="/"> <img src="img/logo.png" alt="">
+						</a>
+					</div>
+					<div class="top-search search-switch">
+						<i class="fa fa-search"></i>
+					</div>
+					<div id="mobile-menu-wrap"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header End -->
+
 	<div class="container">
 		<div class="row my-5">
 			<div class="col-2"></div>
@@ -42,26 +61,27 @@
 
 
 					<h2>Sube tu Imagen</h2>
-					<form id="formulario" action="<c:url value='/usuario'/>" method="post"
-						enctype="multipart/form-data">
-						
+					<form id="formulario" action="<c:url value='/usuario'/>"
+						method="post" enctype="multipart/form-data">
+
 						<div class="form-group">
-							<label for="marca">Nombre</label> <input id="nombre" name="nombre"
-								type="text" class="form-control" />
+							<label for="nombre">Nombre</label> <input id="nombre"
+								name="nombre" type="text" class="form-control" />
 						</div>
 
 						<div class="form-group">
-							<label for="modelo">Correo</label> <input id="email"
-								name="email" type="email" class="form-control" />
+							<label for="email">Correo</label> <input id="email" name="email"
+								type="email" class="form-control" />
 						</div>
 
 						<div class="form-group">
-							<label for="anio">Contraseña</label> <input id="contrasenia" name="contrasenia"
-								type="password" class="form-control" required="required" />
+							<label for="contrasenia">Contraseña</label> <input id="contrasenia"
+								name="contrasenia" type="password" class="form-control"
+								required="required" />
 						</div>
 
 						<div class="form-group">
-							<label for="precio">Imágen</label> <input id="imagen"
+							<label for="imagen">Imágen</label> <input id="imagen"
 								name="imagen" type="file" class="form-control" />
 						</div>
 
@@ -99,8 +119,8 @@
 		});
 	</script>
 	<!-- javascript - # data table -->
-	
-	
+
+
 
 </body>
 </html>

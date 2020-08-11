@@ -50,10 +50,6 @@
 					</div>
 					<!--| campo contrasenia #|-->
 
-
-					<a href="/admin" class="btn btn-primary btn-user btn-block">
-						Login Admin </a> <a href="/usuario"
-						class="btn btn-primary btn-user btn-block"> Login Usuario </a>
 					<div
 						class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
 						<button class="btn btn-primary" type="submit">Ingresar</button>

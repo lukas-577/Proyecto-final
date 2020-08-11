@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -177,6 +178,14 @@
                                 <span>Fashion</span>
                             </div>
                         </div>
+                        <c:forEach var="usuario" items="${usuarios}">
+							<tr>
+								<td><img width="100" height="100"
+									src="<c:url value='${usuario.urlImagen}'></c:url>"
+									class="rounded" alt="${usuario.urlImagen}" /></td>
+								
+							</tr>
+						</c:forEach>
                     </div>
                 </div>
             </div>

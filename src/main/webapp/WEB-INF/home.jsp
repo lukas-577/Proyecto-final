@@ -117,7 +117,7 @@
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-1.jpg"></div>
                     <a href="/album" ><span class="icon_plus"></span></a>
                     <div class="cs-text">
-                        <h4>Animal</h4>
+                        <h4>Plantas</h4>
                         <span>120 pictures</span>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-2.jpg"></div>
                      <a href="/album" ><span class="icon_plus"></span></a>
                     <div class="cs-text">
-                        <h4>Natural</h4>
+                        <h4>Animales</h4>
                         <span>325 pictures</span>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-3.jpg"></div>
                     <a href="/album" ><span class="icon_plus"></span></a>
                     <div class="cs-text">
-                        <h4>Potrait</h4>
+                        <h4>Hongos</h4>
                         <span>540 pictures</span>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                     <div class="cs-pic set-bg" data-setbg="img/categories/cat-4.jpg"></div>
                     <a href="/album" ><span class="icon_plus"></span></a>
                     <div class="cs-text">
-                        <h4>Animal</h4>
+                        <h4>Paisajes</h4>
                         <span>120 pictures</span>
                     </div>
                 </div>
